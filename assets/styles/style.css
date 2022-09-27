@@ -10,7 +10,7 @@ body {
   text-align: center;
 }
 
-nav .menu {
+nav .menu-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -19,7 +19,7 @@ nav .menu {
   gap: 5px;
 }
 
-.menu-icons {
+.menu-icon {
   width: 24px;
   height: 3px;
   background-color: black;
