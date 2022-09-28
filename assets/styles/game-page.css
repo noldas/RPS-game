@@ -47,7 +47,7 @@ body {
 
 /* start header and the header children styles */
 
-header {
+nav {
   display: flex;
 }
 
