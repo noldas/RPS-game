@@ -24,6 +24,7 @@ section {
 }
 
 button {
+  cursor: pointer;
   font-size: 100%; /* 1 */
   margin: 0; /* 2 */
 }
