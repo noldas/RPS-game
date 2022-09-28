@@ -135,11 +135,12 @@ main {
   align-items: center;
   background-color: var(--white-color);
   box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
+  max-width: 100px;
 }
 
 .choice-card > img {
-  width: 48px;
-  height: 78px;
+  max-width: 48px;
+  max-height: 78px;
   margin: 2em;
   background-size: cover;
 }
@@ -152,6 +153,64 @@ main {
   padding: 0.5em 0px;
   background-color: var(--black-color);
   color: var(--white-color);
+}
+
+@media screen and (min-width: 420px) {
+  .choice-card {
+    max-width: 155px;
+  }
+
+  .choice-card img {
+    min-width: 55px;
+    min-height: 85px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  #game-controls {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .choice-card {
+    min-width: 150px;
+  }
+
+  .choice-card img {
+    min-width: 60px;
+    min-height: 90px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  nav {
+    background-color: var(--white-color);
+    padding: 0.8rem 2rem;
+    gap: 1.1rem;
+    justify-content: flex-end;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-reset,
+  .btn-end {
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--black-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    max-width: 150px;
+  }
+
+  #game-controls {
+    gap: 5rem;
+  }
 }
 
 /* End main and the main children styles */
