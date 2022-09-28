@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --main-color: #f9f9f9;
+  --black-color: #333333;
+  --white-color: #ffffff;
+  --red-color: #f88080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+header,
+nav,
+section {
+  display: block;
+}
+
+button {
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--main-color);
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* start header and the header children styles */
+
+header {
+  display: flex;
+}
+
+.btn-reset,
+.btn-end {
+  padding: 0.65em 2em;
+  border: 1px solid var(--black-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.btn-reset {
+  flex: 2;
+  background-color: var(--white-color);
+}
+
+.btn-end {
+  flex: 1;
+  background-color: var(--red-color);
+}
+
+/* End header and the header children styles */
+
+/* Start main and the main children styles */
+
+#player,
+#computer,
+#game-result,
+main {
+  display: flex;
+}
+
+main {
+  height: 100%;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#game-result {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15em;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#game-result > span,
+.score {
+  font-size: 2rem;
+}
+
+.score,
+.role-type {
+  font-weight: 600;
+}
+
+.role-type {
+  font-size: 1.25rem;
+}
+
+#player,
+#computer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1rem;
+  padding: 1em;
+}
+
+.choice-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
+}
+
+.choice-card > img {
+  width: 48px;
+  height: 78px;
+  margin: 2em;
+  background-size: cover;
+}
+
+.card-title {
+  bottom: 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+/* End main and the main children styles */
