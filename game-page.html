@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/game-page.css" />
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button type="button" class="btn-reset">Reset</button>
+        <button type="button" class="btn-end">End</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="game-result">
+        <div id="player">
+          <img src="./assets/images/paper-sign.png" alt="Paper" />
+          <span class="score">1</span>
+          <span class="role-type">Player</span>
+        </div>
+
+        <span>VS</span>
+
+        <div id="computer">
+          <img src="./assets/images/rock-sign.png" alt="Paper" />
+          <span class="score">1</span>
+          <span class="role-type">Player</span>
+        </div>
+      </section>
+
+      <section id="game-controls">
+        <div class="choice-card">
+          <img src="./assets/images/rock-sign.png" alt="Rock Card" />
+          <span class="card-title">Rock</span>
+        </div>
+        <div class="choice-card">
+          <img src="./assets/images/paper-sign.png" alt="Paper Card" />
+          <span class="card-title">Paper</span>
+        </div>
+        <div class="choice-card">
+          <img src="./assets/images/scissors-sign.png" alt="Scissors Card" />
+          <span class="card-title">Scissors</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
