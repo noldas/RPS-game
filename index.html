@@ -13,12 +13,13 @@
   </head>
   <body>
     <nav>
-      <div class="menu-container">
+      <button class="menu-container">
         <div class="menu-icon"></div>
         <div class="menu-icon"></div>
         <div class="menu-icon"></div>
-      </div>
+      </button>
     </nav>
+
     <main>
       <div class="hero">
         <img src="/assets/images/hero.png" alt="rock paper scissors" />
@@ -26,5 +27,19 @@
       </div>
       <button>Start</button>
     </main>
+    <aside>
+      <button class="x-mark-container">
+        <div class="x-mark-line 1"></div>
+        <div class="x-mark-line 2"></div>
+      </button>
+      <h1>History</h1>
+      <div class="history-score">
+        Player
+        <span id="player-history">1</span>
+        -
+        <span id="computer-history">0</span> COM
+      </div>
+    </aside>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
