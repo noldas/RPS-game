@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --main-color: #f9f9f9;
+  --black-color: #333333;
+  --white-color: #ffffff;
+  --red-color: #f88080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+header,
+nav,
+section {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--main-color);
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* start header and the header children styles */
+
+nav {
+  display: flex;
+}
+
+.btn-reset,
+.btn-end {
+  padding: 0.65em 2em;
+  border: 1px solid var(--black-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.btn-reset {
+  flex: 2;
+  background-color: var(--white-color);
+}
+.btn-reset:hover {
+  -webkit-filter: brightness(0.9);
+  filter: brightness(0.9);
+}
+
+.btn-end {
+  flex: 1;
+  background-color: var(--red-color);
+}
+
+.btn-end:hover {
+  -webkit-filter: brightness(0.88);
+  filter: brightness(0.88);
+}
+
+/* End header and the header children styles */
+
+/* Start main and the main children styles */
+
+#player,
+#computer,
+#game-result,
+main {
+  display: flex;
+}
+
+main {
+  height: 100%;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#game-result {
+  width: 100%;
+  display: flex;
+  margin-bottom: 15em;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#game-result > span,
+.score {
+  font-size: 2rem;
+}
+
+.score,
+.role-type {
+  font-weight: 600;
+}
+
+.role-type {
+  font-size: 1.25rem;
+}
+
+#player,
+#computer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1rem;
+  padding: 1em;
+}
+
+.choice-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white-color);
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+  max-width: 100px;
+  transition: all 0.25s;
+}
+
+.choice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 8px 16px 20px rgba(0, 0, 0, 0.25);
+}
+
+.choice-card > img {
+  max-width: 48px;
+  max-height: 78px;
+  margin: 2em;
+  background-size: cover;
+}
+
+.card-title {
+  bottom: 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 0.5em 0px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+/* End main and the main children styles */
+
+/* Media queries */
+@media screen and (min-width: 420px) {
+  .choice-card {
+    max-width: 155px;
+  }
+
+  .choice-card img {
+    min-width: 55px;
+    min-height: 85px;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  #game-controls {
+    justify-content: center;
+    gap: 1.5rem;
+    bottom: 3rem;
+  }
+
+  .choice-card {
+    min-width: 150px;
+  }
+
+  .choice-card img {
+    min-width: 60px;
+    min-height: 90px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  #game-result > span,
+  .score {
+    font-size: 3rem;
+  }
+
+  .role-type {
+    font-size: 1.65rem;
+  }
+
+  #player > img,
+  #computer > img {
+    width: 120px;
+    height: 180px;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  nav {
+    background-color: var(--white-color);
+    padding: 1rem 2rem;
+    gap: 2rem;
+    justify-content: flex-end;
+    box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-reset,
+  .btn-end {
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--black-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    max-width: 150px;
+    transition: all 0.25s;
+  }
+
+  .btn-reset:hover,
+  .btn-end:hover {
+    box-shadow: -10px 10px 0px #333333;
+    transform: scale(1.025);
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+  }
+
+  #game-result {
+    width: 80%;
+  }
+
+  #game-controls {
+    gap: 5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #game-result {
+    width: 60%;
+  }
+}
+
+/* End main and the main children styles */
