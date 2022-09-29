@@ -24,6 +24,12 @@ button {
   cursor: pointer;
 }
 
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   max-width: 540px;
   margin: 0 auto;
@@ -74,14 +80,19 @@ main {
   font-weight: 800;
 }
 
-main > button {
-  padding: 0.5em 3em;
+main button {
+  padding: 0.5em;
+  width: 30%;
   border: 1px solid var(--black-color);
   background-color: var(--white-color);
   font-size: 24px;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   transition: all 0.25s;
+}
+
+button > a {
+  width: 100%;
 }
 
 main > button:hover {
