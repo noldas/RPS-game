@@ -19,8 +19,14 @@
 /* HTML5 display-role reset for older browsers */
 header,
 nav,
-section {
+section,
+a {
   display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
