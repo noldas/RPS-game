@@ -1,20 +1,19 @@
-const asideElement = document.querySelector("aside");
-const menuButtonElement = document.querySelector(".menu-container");
-const xMarkButtonElement = document.querySelector(".x-mark-container");
+const panelHistoryElement = document.querySelector("#panel-history");
+const menuContainerElement = document.querySelector(".menu-container");
+const closeButtonElement = document.querySelector(".close-container");
 
 /**
- * * Set event click for menuButtonElement.
- * * When menuButtonElement is clicked, top property aside will be 0.
+ * Set event click for menuContainerElement
+ * When menuContainerElement is clicked, its top property will be 0
  */
-menuButtonElement.addEventListener("click", () => {
-  asideElement.style.top = 0;
+menuContainerElement.addEventListener("click", () => {
+  panelHistoryElement.style.top = 0;
 });
 
 /**
- * * Set event click for xMarkButtonElement.
- * * When xMarkButtonElement is clicked, top property aside will be -1000px.
+ * Set event click for closeButtonElement.
+ * When closeButtonElement is clicked, top property aside will be -1000px.
  */
-xMarkButtonElement.addEventListener(
-  "click",
-  () => (asideElement.style.top = "-1000px")
-);
+closeButtonElement.addEventListener("click", () => {
+  panelHistoryElement.style.top = "-1000px";
+});
