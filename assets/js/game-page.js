@@ -28,7 +28,6 @@ choiceCardElements.forEach((card) => {
 
     setTimeout(() => {
       winner = getWinner(playerChoice, computerChoice);
-      console.log({ playerChoice, computerChoice, winner });
       scores = setScores({
         player: winner === "player" ? scores.player + 1 : scores.player,
         computer: winner === "computer" ? scores.computer + 1 : scores.computer,
