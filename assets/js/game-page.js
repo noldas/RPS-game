@@ -4,6 +4,7 @@ import { getWinner } from "./modules/getWinner.js";
 import { getImageSource } from "./modules/getImageSource.js";
 
 // Selection of HTML elements with the DOM
+const buttonResetElement = document.querySelector(".btn-reset");
 const playerScoreElement = document.querySelector(".player-score");
 const computerScoreElement = document.querySelector(".computer-score");
 const choiceCardElements = document.querySelectorAll(".choice-card");
@@ -49,4 +50,26 @@ choiceCardElements.forEach((card) => {
       computerScoreElement.innerText = scores.computer;
     }, 1000);
   });
+});
+
+buttonResetElement.addEventListener("click", () => {
+  scores = setScores({
+    player: 0,
+    computer: 0,
+  });
+
+  // remove class "hidden" from the images elements
+  playerChoiceImageElement.classList.add("hidden");
+  computerChoiceImageElement.classList.add("hidden");
+
+  // set the image source and alt attributes for the player and computer image
+  playerChoiceImageElement.src = "";
+  playerChoiceImageElement.alt = "";
+
+  computerChoiceImageElement.src = "";
+  computerChoiceImageElement.alt = "";
+
+  // update the player and computer score
+  playerScoreElement.innerText = scores.player;
+  computerScoreElement.innerText = scores.computer;
 });
