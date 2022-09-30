@@ -20,34 +20,36 @@
     <main>
       <section id="game-result">
         <div id="player">
-          <img src="/assets/images/paper-sign.png" alt="Paper" />
-          <span class="score">1</span>
+          <img class="hidden" id="player-choice-image" src="" alt="" />
+          <span class="score player-score">0</span>
           <span class="role-type">Player</span>
         </div>
 
         <span>VS</span>
 
         <div id="computer">
-          <img src="/assets/images/rock-sign.png" alt="Rock" />
-          <span class="score">1</span>
-          <span class="role-type">Player</span>
+          <img class="hidden" id="computer-choice-image" src="" alt="" />
+          <span class="score computer-score">0</span>
+          <span class="role-type">Computer</span>
         </div>
       </section>
 
       <section id="game-controls">
-        <button class="choice-card">
+        <button class="choice-card" data-choice-type="rock">
           <img src="/assets/images/rock-sign.png" alt="Rock Card" />
           <span class="card-title">Rock</span>
         </button>
-        <button class="choice-card">
+        <button class="choice-card" data-choice-type="paper">
           <img src="/assets/images/paper-sign.png" alt="Paper Card" />
           <span class="card-title">Paper</span>
         </button>
-        <button class="choice-card">
+        <button class="choice-card" data-choice-type="scissors">
           <img src="/assets/images/scissors-sign.png" alt="Scissors Card" />
           <span class="card-title">Scissors</span>
         </button>
       </section>
     </main>
+
+    <script type="module" src="/assets/js/game-page.js"></script>
   </body>
 </html>
