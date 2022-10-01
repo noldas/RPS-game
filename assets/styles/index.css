@@ -47,6 +47,7 @@ body {
   right: 15px;
   top: 15px;
   gap: 5px;
+  z-index: 10;
   cursor: pointer;
 }
 
@@ -54,6 +55,7 @@ body {
   width: 24px;
   height: 3px;
   background-color: var(--black-color);
+  transition: all 0.25s ease-in-out;
 }
 
 main {
@@ -120,31 +122,24 @@ aside > h1 {
   font-weight: 600;
 }
 
-.close-container {
-  display: flex;
-  flex-direction: column;
-  background-color: red;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  right: 1.65em;
-  top: 1.575em;
-  transform: rotate(45deg);
+.active {
+  top: 0;
 }
 
-.close-line {
-  position: absolute;
-  width: 24px;
-  height: 3px;
-  background-color: var(--black-color);
-  transform-origin: center center;
+.menu-icon:first-child.close {
+  rotate: -45deg;
+  width: 12px;
+  translate: 0 3px;
 }
 
-.close-container :nth-child(1) {
-  transform: rotate(90deg);
+.menu-icon:nth-child(2).close {
+  rotate: 180deg;
 }
-.close-container :nth-child(2) {
-  transform: rotate(-0deg);
+
+.menu-icon:last-child.close {
+  rotate: 45deg;
+  width: 12px;
+  translate: 0 -3px;
 }
 
 /* Media queries */
