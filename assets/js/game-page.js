@@ -2,22 +2,22 @@ import { useState } from "./modules/useState.js";
 import { getComputerChoice } from "./modules/computerChoice.js";
 import { getWinner } from "./modules/getWinner.js";
 import { getImageSource } from "./modules/getImageSource.js";
+import { updateGameContent } from "./modules/updateGameContent.js";
+import { resetGameContent } from "./modules/resetGameContent.js";
+import { setValuesToLocalStorage } from "./modules/storage.js";
 
 // Selection of HTML elements with the DOM
 const buttonResetElement = document.querySelector(".btn-reset");
-const playerScoreElement = document.querySelector(".player-score");
-const computerScoreElement = document.querySelector(".computer-score");
+const buttonEndElement = document.querySelector(".btn-end");
 const choiceCardElements = document.querySelectorAll(".choice-card");
-const playerChoiceImageElement = document.querySelector("#player-choice-image");
-const computerChoiceImageElement = document.querySelector(
-  "#computer-choice-image"
-);
 
+// Initialize the state of the game
 let [scores, setScores] = useState({
   player: 0,
   computer: 0,
 });
 
+// Iterate through each choice card element and give each value click event
 choiceCardElements.forEach((card) => {
   card.addEventListener("click", () => {
     const playerChoice = card.dataset.choiceType;
@@ -34,42 +34,31 @@ choiceCardElements.forEach((card) => {
         computer: winner === "computer" ? scores.computer + 1 : scores.computer,
       });
 
-      // remove class "hidden" from the images elements
-      playerChoiceImageElement.classList.remove("hidden");
-      computerChoiceImageElement.classList.remove("hidden");
+      updateGameContent([
+        playerImageSource,
+        playerImageAlt,
+        computerImageSource,
+        computerImageAlt,
+        scores,
+      ]);
 
-      // set the image source and alt attributes for the player and computer image
-      playerChoiceImageElement.src = playerImageSource;
-      playerChoiceImageElement.alt = playerImageAlt;
-
-      computerChoiceImageElement.src = computerImageSource;
-      computerChoiceImageElement.alt = computerImageAlt;
-
-      // update the player and computer score
-      playerScoreElement.innerText = scores.player;
-      computerScoreElement.innerText = scores.computer;
+      setValuesToLocalStorage(scores);
     }, 1000);
   });
 });
 
+// Set event click for buttonResetElement
 buttonResetElement.addEventListener("click", () => {
   scores = setScores({
     player: 0,
     computer: 0,
   });
 
-  // remove class "hidden" from the images elements
-  playerChoiceImageElement.classList.add("hidden");
-  computerChoiceImageElement.classList.add("hidden");
+  resetGameContent([scores]);
+  setValuesToLocalStorage({ player: 0, computer: 0 });
+});
 
-  // set the image source and alt attributes for the player and computer image
-  playerChoiceImageElement.src = "";
-  playerChoiceImageElement.alt = "";
-
-  computerChoiceImageElement.src = "";
-  computerChoiceImageElement.alt = "";
-
-  // update the player and computer score
-  playerScoreElement.innerText = scores.player;
-  computerScoreElement.innerText = scores.computer;
+// Set event click for buttonEndElement
+buttonEndElement.addEventListener("click", (event) => {
+  setValuesToLocalStorage(scores);
 });
