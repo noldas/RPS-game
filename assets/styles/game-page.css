@@ -200,7 +200,7 @@ main {
   #game-controls {
     justify-content: center;
     gap: 1.5rem;
-    bottom: 3rem;
+    bottom: 1.5rem;
   }
 
   .choice-card {
