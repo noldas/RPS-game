@@ -6,7 +6,16 @@ const menuIcons = document.querySelectorAll(".menu-icon");
 const historyPlayerElement = document.querySelector("#history-player");
 const historyComputerElement = document.querySelector("#history-computer");
 
-const { player, computer } = getValuesFromLocalStorage();
+const localData = getValuesFromLocalStorage();
+let player, computer;
+
+if (localData) {
+  player = localData.player;
+  computer = localData.computer;
+} else {
+  player = 0;
+  computer = 0;
+}
 /**
  * Set event click for menuContainer
  * When menuContainer is clicked, toggle class active on panelHistory and close on menuIcon
